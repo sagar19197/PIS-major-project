@@ -1,0 +1,34 @@
+void setup() {
+  Serial.begin(9600);
+      pinMode(8,OUTPUT);
+
+  pinMode(13,OUTPUT);
+  pinMode(2, OUTPUT);
+  Serial.begin(9600);
+
+}
+
+void loop() {
+  if(Serial.available()>0)
+  {
+    char data = Serial.read();
+    if (data == 'a')
+    {Serial.print(0);
+      digitalWrite(13,HIGH);
+    }
+    else if(data == 'b')
+    {
+      Serial.print(1);
+      digitalWrite(13,LOW);
+    }
+      Serial.print(" ");
+  
+   if (digitalRead(8) == HIGH)Serial.println(4);
+  else
+  Serial.println(5);
+  }
+
+  
+
+
+}
